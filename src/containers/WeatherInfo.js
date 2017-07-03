@@ -14,10 +14,11 @@ import { Col, Tabs, Tab, Button } from 'react-bootstrap';
 
 import ScrollArea  from 'react-scrollbar';
 
-const WeatherInfo = React.createClass({
+
+export class WeatherInfo extends React.Component {
 	handleUpdateWeather(city , localIn) {
 		this.props.updateWeather(city, localIn);
-	},
+	}
 
     render() {
     	let data ={};
@@ -104,9 +105,7 @@ const WeatherInfo = React.createClass({
            </Col> 
         );
     }
-});
-
-export default WeatherInfo;
+};
 
 function mapStateToProps (state) {
   return {

@@ -2,8 +2,7 @@ import React from 'react';
 import { Button, Glyphicon, Table } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 
-const TodayWeather = React.createClass({
-
+export default class TodayWeather extends React.Component{
     render() {
         return (
             <Col xs={12} sm={12} md={9} lg={7} lgOffset={0} className="pad0 table-box-today">
@@ -50,8 +49,7 @@ const TodayWeather = React.createClass({
             </Col>
         );
     }
-});
+};
 
-export default TodayWeather;
 
 

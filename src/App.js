@@ -9,7 +9,7 @@ import Header from './components/Header.js';
 
 import { Row , Grid} from 'react-bootstrap';
 
-const App = React.createClass({
+export default class App extends React.Component{
 	
     render() {
         return (
@@ -26,9 +26,8 @@ const App = React.createClass({
             </div>
         );
     }
-});
+};
 
-export default App;
 
 
 

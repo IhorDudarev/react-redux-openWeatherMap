@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Glyphicon } from 'react-bootstrap';
 
-const FavoriteCities = React.createClass({
+export default class FavoriteCities extends React.Component{
 
     render() {
         return (
@@ -22,8 +22,7 @@ const FavoriteCities = React.createClass({
             </div>
         );
     }
-});
+};
 
-export default FavoriteCities;
 
 

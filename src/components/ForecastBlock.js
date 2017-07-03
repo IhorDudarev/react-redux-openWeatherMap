@@ -10,10 +10,7 @@ import { Col } from 'react-bootstrap';
 
 import ScrollArea  from 'react-scrollbar';
 
-
-
-const ForecastBlock= React.createClass({
-
+export default class ForecastBlock extends React.Component{
     render() {
 
         var panelHeader = (
@@ -51,9 +48,8 @@ const ForecastBlock= React.createClass({
             </Col>
         );
     }
-});
+};
 
-export default ForecastBlock;
 
 
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Button, Glyphicon } from 'react-bootstrap';
 
-
-const PreviewCity = React.createClass({
+export default class PreviewCity extends React.Component{
 
     render() {
 
@@ -50,8 +49,7 @@ const PreviewCity = React.createClass({
             </div>
         );
     }
-});
+};
 
-export default PreviewCity;
 
 

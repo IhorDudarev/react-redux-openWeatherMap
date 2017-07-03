@@ -1,8 +1,7 @@
 import React from 'react';
 import { Button, Glyphicon, Table} from 'react-bootstrap';
 
-
-const ForecastShow = React.createClass({
+export default class ForecastShow extends React.Component{
 
     render() {
 
@@ -36,8 +35,7 @@ const ForecastShow = React.createClass({
 
         );
     }
-});
+};
 
-export default ForecastShow;
 
 

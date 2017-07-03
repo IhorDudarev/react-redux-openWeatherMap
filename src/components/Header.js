@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 
 import { getLocalWeather } from '../actions/getLocalWeather.js';
 
-const Header = React.createClass({
+export default class Header extends React.Component{
     componentWillMount() {
         this.props.onInLoad();
-    },
+    }
 
     render() {
         let localProps, src, temp, name, country, flag;
@@ -43,10 +43,7 @@ const Header = React.createClass({
             </header>
         );
     }
-});
-
-export default Header;
-
+};
 
 
 export default connect(

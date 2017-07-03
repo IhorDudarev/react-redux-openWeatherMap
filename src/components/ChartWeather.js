@@ -8,9 +8,7 @@ import * as numberFunc from '../api/func-number.js';
  Chart.defaults.global.defaultFontColor = '#FFF';
  Chart.defaults.global.defaultFontSize = 12;
 
-
-
-const ChartWeather = React.createClass({
+export default class ChartWeather extends React.Component{
 
   render() {
 
@@ -217,6 +215,5 @@ let data = {
       </Col>
     );
   }
-});
+};
      
-export default ChartWeather;

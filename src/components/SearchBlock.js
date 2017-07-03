@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button, Glyphicon ,ControlLabel , FormControl, InputGroup , FormGroup, } from 'react-bootstrap';
 
-const SearchBlock = React.createClass({
+export default class SearchBlock extends React.Component{
     findCityIn(){
         this.props.findCityTo(this.input);
-    },
+    }
     render() {
         return (
             <div className="search-block">                       
@@ -20,7 +20,7 @@ const SearchBlock = React.createClass({
                             className="search-field" 
                     />
                     <InputGroup.Button>
-                      <Button type="button"  bsClass="btn custom-btn" onClick={this.findCityIn}>
+                      <Button type="button"  bsClass="btn custom-btn" onClick={this.findCityIn.bind(this)}>
                         <Glyphicon glyph="search" />
                       </Button>
                     </InputGroup.Button>        
@@ -30,8 +30,7 @@ const SearchBlock = React.createClass({
             </div>
         );
     }
-});
+};
 
-export default SearchBlock;
 
 

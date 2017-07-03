@@ -17,37 +17,40 @@ import SearchBlock from '../components/SearchBlock.js';
 import { Col, Glyphicon, Accordion, Panel} from 'react-bootstrap';
 import ScrollArea  from 'react-scrollbar';
 
-const Navblock = React.createClass({
-     handleChange(e) {
+export class Navblock extends React.Component{
+    constructor(props) {
+        super(props);
+    }
+    handleChange(e) {
         this.setState({ value: e.target.value });
-    },
+    }
     componentWillMount() {
         this.props.getFavoriteCities();
-    },
-    handleCityAdd: function() {
+    }
+    handleCityAdd() {
         if(this.props.cities.newCity){    
             this.props.addCity(this.props.cities.newCity);
         }
-    },
-    getCityWeather: function(e) {
+    }
+    getCityWeather(e) {
         e.preventDefault();
-    },
-    handleClickDel :function (cityId) {
+    }
+    handleClickDel(cityId) {
         this.props.deleteFavoriteCity(cityId);
-    },
+    }
     handleClickWeather(city, localCity) {
         this.props.getWeather(city, localCity);
-    },
+    }
     handledelPreview() {
         this.props.delNewCity();
-    },
+    }
 
-	findCity:function(el) {
-        if(el.value){
-            this.props.findNewCity(el.value);
-            el.value ='';
-        }
-	},
+  	findCity(el) {
+          if(el.value){
+              this.props.findNewCity(el.value);
+              el.value ='';
+          }
+  	}
 
     render() {
 
@@ -71,7 +74,7 @@ const Navblock = React.createClass({
              <Col xs={12} sm={5} md={4}>
                 <div className='nav-block'>
 
-            		<SearchBlock findCityTo={this.findCity}/>
+            		<SearchBlock findCityTo={this.findCity.bind(this)}/>
                     <p className="get-city-fail"> {this.props.cities.errorAdd}</p>
         			   <div className="all-city">
             			 {
@@ -79,11 +82,11 @@ const Navblock = React.createClass({
                               <PreviewCity
                                     name={newcity.name}
                                     country={newcity.sys.country}
-                                    onClickAdd={this.handleCityAdd}
+                                    onClickAdd={this.handleCityAdd.bind(this)}
                                     showPreviewWeather={this.handleClickWeather.bind(this,newcity.name,'')}
                                     localCity = {this.props.cities.localCity}
                                     addCity = {this.props.cities.addCity}
-                                    delPreview = {this.handledelPreview}
+                                    delPreview = {this.handledelPreview.bind(this)}
                               />
                               : ''                 
                          }
@@ -124,9 +127,8 @@ const Navblock = React.createClass({
             </Col>
         );
     }
-});
+};
 
-export default Navblock;
 
 
 function mapStateToProps (state) {
